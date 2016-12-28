@@ -18,14 +18,30 @@ void stepper1(int steps){
   if(steps==END)
     stepper1_end();
   else
-    _stepper1.step(steps);
+      _stepper1.step(steps);
+    digitalWrite(STEPPER1_1, LOW);
+    digitalWrite(STEPPER1_2, LOW);
+    digitalWrite(STEPPER1_3, LOW);
+    digitalWrite(STEPPER1_4, LOW);
+    digitalWrite(STEPPER2_1, LOW);
+    digitalWrite(STEPPER2_2, LOW);
+    digitalWrite(STEPPER2_3, LOW);
+    digitalWrite(STEPPER2_4, LOW);
 }
 void stepper2(int steps){
   if(!initiated) ksop();
   if(steps==END)
     stepper2_end();
   else
-    _stepper2.step(steps);
+      _stepper2.step(steps);
+    digitalWrite(STEPPER1_1, LOW);
+    digitalWrite(STEPPER1_2, LOW);
+    digitalWrite(STEPPER1_3, LOW);
+    digitalWrite(STEPPER1_4, LOW);
+    digitalWrite(STEPPER2_1, LOW);
+    digitalWrite(STEPPER2_2, LOW);
+    digitalWrite(STEPPER2_3, LOW);
+    digitalWrite(STEPPER2_4, LOW);
 }
 void servo1(int angle){
   if(!initiated) ksop();
