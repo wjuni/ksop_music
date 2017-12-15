@@ -9,18 +9,13 @@ static bool initiated = false;
 static volatile int StepA_seq = 0, StepB_seq = 0;
 static volatile long StepA_Target = 0, StepB_Target = 0;
 static volatile char StepA_dir = STEPPER1_DIRECTION, StepB_dir = STEPPER2_DIRECTION;
-static char pattern[4] = {0b0101, 0b0110, 0b1010, 0b1001};
+static char pattern[4] = {0b0101, 0b0110, 0b1010, 0b1001}; /* Bipolar Stepper Motor Drive */
+
 static void ksop(){
   _servo1.attach(SERVO1);
   _servo2.attach(SERVO2);
   _servo3.attach(SERVO3);
   _servo4.attach(SERVO4);
-<<<<<<< HEAD
-=======
-  
-  _stepper1.setSpeed(STEPPER_SPEED);
-  _stepper2.setSpeed(STEPPER_SPEED);
->>>>>>> a41a7c0eccd783baa5d13fabbdc88f128d9060cf
   pinMode(STEPPER1_SENSOR, INPUT_PULLUP);
   pinMode(STEPPER2_SENSOR, INPUT_PULLUP);
   
@@ -28,9 +23,11 @@ static void ksop(){
   PINB &= ~(0x0f);
   PORTL &= ~ (0x0f);
   PORTB &= ~ (0x0f);
-  // Use ATMega2560 Timer2 (8-bit), WGM=CTC(0x03), Match A Interrupt
-  // Prescaler Selection = Clk/256 (0b110), Target Interrupt period 1ms, 16000kHz/256 = 62.5 kHz -> interrupt at 63
-  // stop timer
+  
+  /* 
+   *  Use ATMega2560 Timer2 (8-bit), WGM=CTC(0x03), Match A Interrupt.
+   *  Prescaler Selection = Clk/256 (0b110), Target Interrupt period 1ms, 16000kHz/256 = 62.5 kHz -> interrupt at 63
+   */
   cli();
   TCCR2B &= ~((1 << CS22) | (1 << CS21) | (1 << CS20));
   TCCR2A &= ~((1 << WGM20));
