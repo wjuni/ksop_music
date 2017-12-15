@@ -1,3 +1,8 @@
+/* 
+ *  KSOP 2017 Winter Camp Music Library
+ *  Hwijoon Lim (wjuni@kaist.ac.kr)
+ */
+ 
 #pragma once
 #ifndef __KSOP_H_
 #define __KSOP_H_
@@ -14,6 +19,7 @@
 #define SERVO1 10
 #define SERVO2 11
 #define SERVO3 12
+#define SERVO4 9
 
 #define STEPPER1_SENSOR 2
 #define STEPPER2_SENSOR 3
@@ -35,6 +41,7 @@ void stepper2(int steps);
 void servo1(int angle);
 void servo2(int angle);
 void servo3(int angle);
+void servo4(int angle);
 void stepper1_end();
 void stepper2_end();
 
