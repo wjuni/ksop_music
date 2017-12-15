@@ -1,3 +1,8 @@
+/* 
+ *  KSOP 2017 Winter Camp Music Library
+ *  Hwijoon Lim (wjuni@kaist.ac.kr)
+ */
+ 
 #include "ksop.h"
 static Servo _servo1, _servo2, _servo3, _servo4;
 static bool initiated = false;
@@ -10,6 +15,12 @@ static void ksop(){
   _servo2.attach(SERVO2);
   _servo3.attach(SERVO3);
   _servo4.attach(SERVO4);
+<<<<<<< HEAD
+=======
+  
+  _stepper1.setSpeed(STEPPER_SPEED);
+  _stepper2.setSpeed(STEPPER_SPEED);
+>>>>>>> a41a7c0eccd783baa5d13fabbdc88f128d9060cf
   pinMode(STEPPER1_SENSOR, INPUT_PULLUP);
   pinMode(STEPPER2_SENSOR, INPUT_PULLUP);
   

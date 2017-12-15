@@ -1,3 +1,8 @@
+/* 
+ *  KSOP 2017 Winter Camp Music Library
+ *  Hwijoon Lim (wjuni@kaist.ac.kr)
+ */
+ 
 #pragma once
 #ifndef __KSOP_H_
 #define __KSOP_H_
