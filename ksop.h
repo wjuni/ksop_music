@@ -39,4 +39,6 @@ void servo4(int angle);
 void stepper1_end();
 void stepper2_end();
 
+ISR(TIMER2_COMPA_vect);
+
 #endif
